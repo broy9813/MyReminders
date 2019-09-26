@@ -1,6 +1,7 @@
 package com.example.myreminders;
 
 import android.app.DatePickerDialog;
+import android.app.Notification;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -21,6 +22,9 @@ public class CreateList extends AppCompatActivity {
 
     // declare Intent
     Intent intent;
+
+    //declare database handler
+    DBHandler dbHandler;
 
     // declare EditTexts
     EditText titleEditText;
@@ -76,6 +80,9 @@ public class CreateList extends AppCompatActivity {
 
             }
         });
+
+        //initialize database handler
+        dbHandler = new DBHandler(this, null);
     }
 
     public void updateDueDate() {
@@ -119,10 +126,11 @@ public class CreateList extends AppCompatActivity {
         }
     }
 
-    public void createList (MenuItem menuItem) {
+    public void addReminder (MenuItem menuItem) {
 
         // get data input in EditTexts and store it in Strings
-        String tile = tileEditText.getText().toString();
+        Notification.MessagingStyle.Message tileEditText;
+        String title = titleEditText.getText().toString();
         String date = dateEditText.getText().toString();
         String type = typeEditText.getText().toString();
 
@@ -130,6 +138,8 @@ public class CreateList extends AppCompatActivity {
             //if any of the Strings are empty, display Please enter... Toast
             Toast.makeText(this, "Please enter a title, date, and type!", Toast.LENGTH_LONG).show();
         } else {
+            // add shopping list to database
+            dbHandler.addMyReminderList(title, date, type);
             // if none of the Strings are empty, display Shopping List Added Toast
             Toast.makeText( this, "Your Reminder is Added!", Toast.LENGTH_LONG).show();
 

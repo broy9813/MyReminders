@@ -4,4 +4,6 @@
     <string name="action_add_reminder">Add Reminder</string>
     <string name="action_home">Home</string>
     <string name="title_activity_create_list">Create List</string>
+    <string name="title_activity_view_list">View List</string>
+    <string name="action_add_item">Add Item</string>
 </resources>
