@@ -6,4 +6,15 @@
     <string name="title_activity_create_list">Create List</string>
     <string name="title_activity_view_list">View List</string>
     <string name="action_add_item">Add Item</string>
+    <string name="title_activity_add_reminder">Add Reminder</string>
+    <string name="title">Title</string>
+    <string name="date">Date</string>
+    <string name="type">Type</string>
+    <string-array name="type">
+        <item></item>
+        <item>School</item>
+        <item>Work</item>
+        <item>Personal</item>
+        <item>Medical</item>
+    </string-array>
 </resources>

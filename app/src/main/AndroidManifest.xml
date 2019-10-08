@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity_view_list"
-            android:label="@string/title_activity_view_list"
+            android:name=".AddReminder"
+            android:label="@string/title_activity_add_reminder"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".CreateList"
